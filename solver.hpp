@@ -1,12 +1,10 @@
 # pragma once
 
 #include <iostream>
-
+#include <complex>
 namespace solver {
 
-    double solve(RealVariable);
-    std::complex<double> solve(ComplexVariable);
-
+   
     class RealVariable {
         double mul, div, plus, minus, power;
         
@@ -30,14 +28,26 @@ namespace solver {
         void setPlus(double plus){ this->plus=plus; }
         void setMinus(double minus){ this->minus=minus; }
         void setPower(double power){ this->power=power; }
-
-
-        friend RealVariable operator* (const RealVariable &c1, const RealVariable &c2);
-        friend const RealVariable operator* (const RealVariable& c1, int d);
+ 
 
     };
 
     class ComplexVariable {
 
     };
+
+
+    //operators overloading RealVaribale
+
+    RealVariable& operator * (RealVariable& rv, double d);
+    RealVariable& operator * (double d, RealVariable& rv);
+    RealVariable& operator - (RealVariable& rv, double m);
+    RealVariable& operator - (double m, RealVariable& rv);  
+
+
+
+    double solve(RealVariable);
+    std::complex<double> solve(ComplexVariable);
+
 } 
+
