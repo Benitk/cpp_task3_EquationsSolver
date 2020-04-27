@@ -41,8 +41,60 @@ namespace solver {
 
     RealVariable& operator * (RealVariable& rv, double d);
     RealVariable& operator * (double d, RealVariable& rv);
+    RealVariable& operator * (RealVariable& rv1,RealVariable& rv2);
+
+
     RealVariable& operator - (RealVariable& rv, double m);
     RealVariable& operator - (double m, RealVariable& rv);  
+    RealVariable& operator - (RealVariable& rv1,RealVariable& rv2);
+
+
+    RealVariable& operator + (double m, RealVariable& rv);
+    RealVariable& operator + (RealVariable& rv, double m);
+    RealVariable& operator + (RealVariable& rv1,RealVariable& rv2);
+
+
+    RealVariable& operator / (double m, RealVariable& rv);
+    RealVariable& operator / (RealVariable& rv, double m);
+    RealVariable& operator / (RealVariable& rv1,RealVariable& rv2);
+    
+    RealVariable& operator ^ (RealVariable& rv,double m);
+
+
+    RealVariable& operator == (double m, RealVariable& rv);
+    RealVariable& operator == (RealVariable& rv, double m);
+    RealVariable& operator == (RealVariable& rv1,RealVariable& rv2);
+
+    
+    //operators overloading ComplexVaribale
+    ComplexVariable& operator * (ComplexVariable& rv, std::complex<double> d);
+    ComplexVariable& operator * (std::complex<double> d, ComplexVariable& rv);
+    ComplexVariable& operator * (ComplexVariable& rv1,ComplexVariable& rv2);
+
+
+    ComplexVariable& operator - (ComplexVariable& rv, std::complex<double> m);
+    ComplexVariable& operator - (std::complex<double> m, ComplexVariable& rv);  
+    ComplexVariable& operator - (ComplexVariable& rv1,ComplexVariable& rv2);
+
+
+    ComplexVariable& operator + (std::complex<double> m, ComplexVariable& rv);
+    ComplexVariable& operator + (ComplexVariable& rv, std::complex<double> m);
+    ComplexVariable& operator + (ComplexVariable& rv1,ComplexVariable& rv2);
+
+
+    ComplexVariable& operator / (std::complex<double> m, ComplexVariable& rv);
+    ComplexVariable& operator / (ComplexVariable& rv, std::complex<double> m);
+    ComplexVariable& operator / (ComplexVariable& rv1,ComplexVariable& rv2);
+    
+    ComplexVariable& operator ^ (ComplexVariable& rv,std::complex<double> m);
+
+    ComplexVariable& operator == (std::complex<double> m, ComplexVariable& rv);
+    ComplexVariable& operator == (ComplexVariable& rv, std::complex<double> m);
+    ComplexVariable& operator == (ComplexVariable& rv1,ComplexVariable& rv2);
+
+
+
+
 
 
 
