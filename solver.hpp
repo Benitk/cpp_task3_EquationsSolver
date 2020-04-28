@@ -59,6 +59,8 @@ namespace solver {
     RealVariable& operator / (RealVariable& rv1,RealVariable& rv2);
     
     RealVariable& operator ^ (RealVariable& rv,double m);
+    RealVariable& operator ^ (double m, RealVariable& rv);
+    RealVariable& operator ^ (RealVariable& rv1,RealVariable& rv2);
 
 
     RealVariable& operator == (double m, RealVariable& rv);
@@ -87,11 +89,21 @@ namespace solver {
     ComplexVariable& operator / (ComplexVariable& rv1,ComplexVariable& rv2);
     
     ComplexVariable& operator ^ (ComplexVariable& rv,std::complex<double> m);
+    ComplexVariable& operator ^ (std::complex<double> m, ComplexVariable& rv);
+    ComplexVariable& operator ^ (ComplexVariable& rv1,ComplexVariable& rv2);
 
     ComplexVariable& operator == (std::complex<double> m, ComplexVariable& rv);
     ComplexVariable& operator == (ComplexVariable& rv, std::complex<double> m);
     ComplexVariable& operator == (ComplexVariable& rv1,ComplexVariable& rv2);
 
+
+    std::complex<double> operator + (int, std::complex<double> m);
+
+    std::complex<double> operator + (std::complex<double> m,int);
+
+    std::complex<double> operator - (int, std::complex<double> m);
+    std::complex<double> operator - (std::complex<double> m,int);
+  
 
 
 

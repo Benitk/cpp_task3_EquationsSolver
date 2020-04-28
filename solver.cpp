@@ -57,6 +57,12 @@ namespace solver {
     RealVariable& operator ^ (RealVariable& rv,double m){
       return rv;
     }
+    RealVariable& operator ^ (double m, RealVariable& rv){
+      return rv;
+    }
+    RealVariable& operator ^ (RealVariable& rv1,RealVariable& rv2){
+      return rv1;
+    }
     RealVariable& operator == (double m, RealVariable& rv){
       return rv;
     }
@@ -115,6 +121,12 @@ namespace solver {
     ComplexVariable& operator ^ (ComplexVariable& rv,std::complex<double> m){
       return rv;
     }
+    ComplexVariable& operator ^ (std::complex<double> m, ComplexVariable& rv){
+      return rv;
+    }
+    ComplexVariable& operator ^ (ComplexVariable& rv1,ComplexVariable& rv2){
+      return rv1;
+    }
 
     ComplexVariable& operator == (std::complex<double> m, ComplexVariable& rv){
       return rv;
@@ -124,6 +136,18 @@ namespace solver {
     }
     ComplexVariable& operator == (ComplexVariable& rv1,ComplexVariable& rv2){
       return rv1;
+    }
+     std::complex<double> operator + (int a, std::complex<double> m){
+      return m;
+    }
+     std::complex<double> operator + (std::complex<double> m,int a){
+      return m;
+    }
+      std::complex<double> operator - (int a, std::complex<double> m){
+      return 0.0;
+    }
+     std::complex<double> operator - (std::complex<double> m,int a){
+      return 0.0;
     }
 
 
