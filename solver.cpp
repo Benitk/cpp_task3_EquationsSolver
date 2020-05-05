@@ -59,7 +59,9 @@ namespace solver {
       std::complex<double> c = A.c;
       std::complex<double> ans;
 
-      if(a.real() == 0.0 && a.imag() == 0.0)
+      if(a.real() == 0.0 && b.real() == 0.0 && a.imag() == 0.0 && b.imag() == 0.0)
+        throw std::runtime_error("No solution to the real numbers");
+      else if(a.real() == 0.0 && a.imag() == 0.0)
         ans = -c/b;
       else{
          std::complex<double> d = std::sqrt(b*b - 4.0*a*c);
@@ -124,7 +126,10 @@ namespace solver {
       double c = A.c;
       double ans;
 
-      if(a == 0.0)
+
+      if(a == 0.0 && b == 0.0)
+        throw std::runtime_error("No solution to the real numbers");
+      else if(a == 0.0)
         ans = -c/b;
       else{
         double d = b*b - 4.0*a*c;
