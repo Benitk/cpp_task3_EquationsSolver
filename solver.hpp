@@ -1,29 +1,65 @@
 # pragma once
 
-# include <iostream>
-# include <complex>
-
+#include <iostream>
+#include <complex>
 namespace solver {
+
+
    
     class RealVariable {
-        double i;
-        public:
-            double get_i() { return i; }
-            void set_i(double i){i=i;}
-    };
+      public:
+      double a=0.0 ,b=1.0, c=0.0;
 
+      RealVariable(){}
+	    RealVariable(double c) : a(0), b(0), c(c) {}
+      
+      double get_a(){
+        return a;
+      }
+      double get_b(){
+        return b;
+      }
+      double get_c(){
+        return c;
+      }
+
+      friend RealVariable operator +  (RealVariable A, RealVariable B);
+      friend RealVariable operator -  (RealVariable A, RealVariable B);
+      friend RealVariable operator *  (RealVariable A, RealVariable B);
+      friend RealVariable operator /  (RealVariable A, RealVariable B);
+      friend RealVariable operator ^  (RealVariable A, RealVariable B);
+      friend RealVariable operator == (RealVariable A, RealVariable B);         
+
+    };
     class ComplexVariable {
-        std::complex<double> i;
-        public:
-            std::complex<double> get_i() { return i; }
-            void set_i(double i){
-                this->i.real=i;
-                this->i.imag=0;
-            }
-    };
+      public:
+            std::complex<double> a=0.0 ,b=1.0, c=0.0;
 
-    //double solve(RealVariable);
-    //std::complex<double> solve(equation);
+              ComplexVariable(){}
+	            ComplexVariable(double c) : a(0), b(0), c(c) {}
+              ComplexVariable(std::complex<double> c) : a(0), b(0), c(c) {}
+
+              std::complex<double> get_a(){
+                return a;
+              }
+              std::complex<double> get_b(){
+                return b;
+              }
+              std::complex<double> get_c(){
+                return c;
+              }
+
+            friend ComplexVariable operator +  (ComplexVariable A, ComplexVariable B);
+            friend ComplexVariable operator -  (ComplexVariable A, ComplexVariable B);
+            friend ComplexVariable operator *  (ComplexVariable A, ComplexVariable B);
+            friend ComplexVariable operator /  (ComplexVariable A, ComplexVariable B);
+            friend ComplexVariable operator ^  (ComplexVariable A, ComplexVariable B);
+            friend ComplexVariable operator == (ComplexVariable A, ComplexVariable B);
+            };
+
+
+    double solve(RealVariable);
+    std::complex<double> solve(ComplexVariable);
 
 } 
 
