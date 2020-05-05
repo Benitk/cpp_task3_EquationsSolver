@@ -7,9 +7,9 @@ namespace solver {
 
    
     class RealVariable {
-      public:
       double a=0.0 ,b=1.0, c=0.0;
 
+      public:
       RealVariable(){}
 	    RealVariable(double c) : a(0), b(0), c(c) {}
       
@@ -32,9 +32,9 @@ namespace solver {
 
     };
     class ComplexVariable {
-      public:
             std::complex<double> a=0.0 ,b=1.0, c=0.0;
 
+             public:
               ComplexVariable(){}
 	            ComplexVariable(double c) : a(0), b(0), c(c) {}
               ComplexVariable(std::complex<double> c) : a(0), b(0), c(c) {}

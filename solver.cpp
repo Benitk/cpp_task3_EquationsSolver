@@ -54,9 +54,9 @@ namespace solver {
     }
 
     std::complex<double> solve(ComplexVariable A){
-      std::complex<double> a = A.a;
-      std::complex<double> b = A.b;
-      std::complex<double> c = A.c;
+      std::complex<double> a = A.get_a();
+      std::complex<double> b = A.get_b();
+      std::complex<double> c = A.get_c();
       std::complex<double> ans;
 
       if(a.real() == 0.0 && b.real() == 0.0 && a.imag() == 0.0 && b.imag() == 0.0)
@@ -121,9 +121,9 @@ namespace solver {
     }
 
     double solve(RealVariable A){
-      double a = A.a;
-      double b = A.b;
-      double c = A.c;
+      double a = A.get_a();
+      double b = A.get_b();
+      double c = A.get_c();
       double ans;
 
 
